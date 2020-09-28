@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.depot.ex.admin.dao.DepotInfoDao">
+<cache type="com.depot.ex.utils.RedisCache"/>
+    <update id="update">
+       update depotinfo set hourmoney=#{hourmoney},monthcard=#{monthcard},yearcard=#{yearcard},illegal=#{illegal}
+       where id=1
+    </update>
+    <select id="findById" resultType="com.depot.ex.admin.entity.DepotInfo">
+        select * from depotinfo where id=#{id}
+    </select>
+</mapper>
